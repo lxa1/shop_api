@@ -1,17 +1,34 @@
-const Koa = require("koa")
+const path = require("path");
 
-const { koaBody } =require('koa-body')
+const Koa = require("koa");
 
-const UserRouter = require('../router/user.route')
+// 处理请求body包
+const { koaBody } = require("koa-body");
 
-const errorHandler=require('./errorHandler')
+// 静态资源访问包
+const koaStatic = require("koa-static");
 
-const app = new Koa()
+const parameter = require("koa-parameter");
 
-app.on('error', errorHandler)
+const errorHandler = require("./errorHandler");
+const Routers = require("../router/index");
 
-app.use(koaBody())
+const app = new Koa();
 
-app.use(UserRouter.routes())
+// 统一处理错误
+app.on("error", errorHandler);
 
-module.exports=app
+app.use(
+  koaBody({
+    multipart: true,
+    formidable: {
+      uploadDir: path.join(__dirname, "../upload"),
+      keepExtensions: true,
+    },
+  })
+);
+app.use(koaStatic(path.join(__dirname, "../upload")));
+app.use(parameter(app));
+app.use(Routers.routes()).use(Routers.allowedMethods());
+
+module.exports = app;

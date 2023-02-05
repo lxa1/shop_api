@@ -9,7 +9,7 @@ const {
   MYSQL_DB,
 } = require("../config/config.default");
 
-const { Sequelize, Model } = require("sequelize");
+const { Sequelize } = require("sequelize");
 
 const seq = new Sequelize(MYSQL_DB, MYSQL_USER, MYSQL_PWD, {
   host: MYSQL_HOST,
@@ -25,4 +25,4 @@ const seq = new Sequelize(MYSQL_DB, MYSQL_USER, MYSQL_PWD, {
     console.log("数据库连接失败", err);
   }); */
 
-module.exports=seq
+module.exports = seq;

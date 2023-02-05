@@ -13,14 +13,27 @@ class UserService {
   async getUserInfo({ user_name, id }) {
     const whereOpt = {};
 
-    user_name && Object.assign(whereOpt,{user_name})
-    id && Object.assign(whereOpt, { id })
-    
+    user_name && Object.assign(whereOpt, { user_name });
+    id && Object.assign(whereOpt, { id });
+
     const res = await User.findOne({
-      attributes: ["user_name","id"],
-      where:whereOpt
-    })
-    return res? res.dataValues:null
+      attributes: ["user_name", "id", "is_admin", "password"],
+      where: whereOpt,
+    });
+    return res ? res.dataValues : null;
+  }
+
+  // 根据id修改用户信息
+  async updateById(id, { user_name, is_admin, password }) {
+    const whereOpt = { id };
+    const newUser = {};
+    user_name && Object.assign(newUser, { user_name });
+    is_admin && Object.assign(newUser, { is_admin });
+    password && Object.assign(newUser, { password });
+    const res = await User.update(newUser, {
+      where: whereOpt,
+    });
+    return res[0] > 0 ? true : false;
   }
 }
 module.exports = new UserService();
