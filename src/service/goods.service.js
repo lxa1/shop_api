@@ -42,5 +42,15 @@ class GoodsService {
       data:rows
     }
   }
+
+  // 通过id查找商品数量
+  async findGoodsCountById(goods_id) {
+    const goodsCount = await Goods.count({
+      where: {
+        id:goods_id,
+      }
+    })
+    return goodsCount
+  }
 }
 module.exports = new GoodsService();

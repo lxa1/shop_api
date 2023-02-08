@@ -24,7 +24,7 @@ class UserController {
     try {
       const res = await createUser(user_name, password);
       ctx.body = {
-        code: 0,
+        code: "10000",
         message: "用户注册成功",
         result: {
           id: res.id,
@@ -44,7 +44,7 @@ class UserController {
       const { password, ...res } = await getUserInfo({ user_name });
       const token = jwt.sign(res, JWT_SECRET, { expiresIn: "1d" });
       ctx.body = {
-        code: 0,
+        code: "10000",
         message: "用户登陆成功",
         result: {
           token,

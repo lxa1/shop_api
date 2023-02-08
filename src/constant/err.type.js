@@ -117,5 +117,48 @@ module.exports = {
     code: "10307",
     message: '获取商品信息失败',
     result:''
+  },
+
+  //购物车模块
+
+  cartFormatError: {
+    code: '10401',
+    message: '购物车参数格式错误',
+    result:''
+  },
+  addCartError: {
+    code: '10402',
+    message: '添加购物车失败',
+    result:''
+  },
+  getCartError: {
+    code: "10403",
+    message: '查询购物车列表失败',
+    result:''
+  },
+  cartParamsNullError: {
+    code: '10404',
+    message: '商品数量和选中参数不能同时为空',
+    result:''
+  },
+  invalidCartId: {
+    code: '10405',
+    message: '无效的购物车id',
+    result:''
+  },
+  updateCartError: {
+    code: '10406',
+    message: '更新购物车信息失败',
+    result:''
+  },
+  removeCartError: {
+    code: '10407',
+    message: '购物车删除失败',
+    result:''
+  },
+  selectCartError: {
+    code: '10408',
+    message: '购物车商品选择失败',
+    result:""
   }
 };
