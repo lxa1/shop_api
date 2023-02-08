@@ -24,6 +24,10 @@ const Goods = seq.define("shop_goods", {
     allowNull: false,
     comment: "商品图片url",
   },
+}, {
+  // 添加删除时间字段（软删除时使用）
+  paranoid:true
 });
 
+// Goods.sync({force:true})
 module.exports = Goods;

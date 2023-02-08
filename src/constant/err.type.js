@@ -2,6 +2,7 @@
   错误类型
 */
 module.exports = {
+  // 用户模块错误
   userFormatError: {
     code: "10001",
     message: "用户名或密码为空",
@@ -42,6 +43,8 @@ module.exports = {
     message: "密码与之前密码一致，请重新修改",
     result: "",
   },
+
+  //身份验证模块错误
   tokenExpiredError: {
     code: "10101",
     message: "token已过期",
@@ -67,6 +70,7 @@ module.exports = {
     message: "没有管理权限",
     result: "",
   },
+  // 上传图片模块错误
   uploadError: {
     code: "10201",
     message: "上传失败",
@@ -77,6 +81,8 @@ module.exports = {
     message: "不支持的文件格式",
     result: "",
   },
+
+  //商品模块错误
   goodsFormatError: {
     code: "10301",
     message: "商品添加参数格式错误",
@@ -87,4 +93,29 @@ module.exports = {
     message: "商品添加失败",
     result: "",
   },
+  invalidGoodsId: {
+    code: "10303",
+    message: "无效的商品Id",
+    result: "",
+  },
+  updateGoodsError: {
+    code: "10304",
+    message: "商品信息更新失败",
+    result: "",
+  },
+  removeGoodsError: {
+    code: "10305",
+    message: "商品删除失败",
+    result: "",
+  },
+  restoreGoodsError: {
+    code: "10306",
+    message: "商品恢复失败",
+    result: "",
+  },
+  getGoodsError: {
+    code: "10307",
+    message: '获取商品信息失败',
+    result:''
+  }
 };
