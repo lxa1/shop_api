@@ -193,5 +193,38 @@ module.exports = {
     code: '10506',
     message: '删除地址失败',
     result:''
-  }
+  },
+
+
+  // 订单模块
+  orderFormatError: {
+    code: '10601',
+    message: '订单参数格式错误',
+    result:''
+  },
+  orderTotalError: {
+    code: "10602",
+    message: '总金额错误',
+    result:''
+  },
+  addOrderError: {
+    code: '10603',
+    message: "添加订单失败",
+    result:''
+  },
+  getOrderError: {
+    code: "10604",
+    message: '获取订单失败',
+    result:''
+  },
+  invalidOrderId: {
+    code: "10605",
+    message: '无效的订单Id',
+    result:""
+  },
+  updateOrderError: {
+    code: '10606',
+    message: '更新订单失败',
+    result:''
+  },
 };
