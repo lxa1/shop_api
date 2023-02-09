@@ -160,5 +160,38 @@ module.exports = {
     code: '10408',
     message: '购物车商品选择失败',
     result:""
+  },
+
+
+  // 地址模块
+  addressFormatError: {
+    code: "10501",
+    message: '地址参数格式错误',
+    result:''
+  },
+  addAddressError: {
+    code: '10502',
+    message: '添加地址错误',
+    result:''
+  },
+  getAddressError: {
+    code: "10503",
+    message: '获取地址列表错误',
+    result:''
+  },
+  invalidAddressId: {
+    code: '10504',
+    message: '无效的地址Id',
+    result:""
+  },
+  updateAddressError: {
+    code: '10505',
+    message: '更新地址信息错误',
+    result:''
+  },
+  removeAddressError: {
+    code: '10506',
+    message: '删除地址失败',
+    result:''
   }
 };
