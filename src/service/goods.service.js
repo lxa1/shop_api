@@ -52,5 +52,16 @@ class GoodsService {
     })
     return goodsCount
   }
+
+  // 通过id查找价格
+  async getPriceById(id) {
+    const res=await Goods.findOne({
+      attributes: ['goods_price'],
+      where: {
+        id,
+      }
+    })
+    return res.dataValues.goods_price
+  }
 }
 module.exports = new GoodsService();
